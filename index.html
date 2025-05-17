@@ -1,44 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday Bala 🎂</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Bala 💖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #ffc2d1);
+      color: #333;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #e91e63;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    img {
+      width: 90%;
+      max-width: 400px;
+      border-radius: 20px;
+      margin: 10px auto;
+      display: block;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    audio {
+      display: none;
+    }
+
+    #love-letter {
+      display: none;
+      background-color: white;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      color: #e91e63;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    #heart-bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      p { font-size: 1em; }
+    }
+  </style>
 </head>
 <body>
+  <!-- Background Hearts -->
+  <div id="heart-bg"></div>
+
+  <!-- Background Music -->
   <audio autoplay loop>
-    <source src="music/aankhon-se-batana.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
+    <source src="aankhon-se-batana.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
   </audio>
 
-  <div class="container">
-    <h1>Happy Birthday Bala 🎉</h1>
+  <!-- Heading and Wishes -->
+  <h1>Happy Birthday Bala 🎂</h1>
+  <p>To the cutest girl in the world 💖<br>Your smile is my sunshine 🌸<br>– From your Raja 💌</p>
 
-    <div class="slideshow">
-      <img id="slide" src="images/img1.jpg" alt="Bala's Photo" />
-    </div>
+  <!-- Photos -->
+  <img src="images/vaibhavi1.jpg" alt="Bala Smile 1">
+  <img src="images/vaibhavi2.jpg" alt="Bala Smile 2">
+  <img src="images/vaibhavi3.jpg" alt="Bala Smile 3">
 
-    <div class="message-box">
-      <p>
-        Dear Bala 💗,<br><br>
-        On your special day, I just want to say how lucky I am to have you. Your smile brightens my life like the morning sun. Thank you for being mine.<br><br>
-        With all my heart,<br>
-        — Your Raja 👑
-      </p>
-    </div>
-
-    <div class="countdown">
-      <h2>Countdown to Your Birthday 🎂</h2>
-      <div id="timer">
-        <span id="days">0</span> Days
-        <span id="hours">0</span> Hours
-        <span id="minutes">0</span> Minutes
-        <span id="seconds">0</span> Seconds
-      </div>
-    </div>
+  <!-- Secret Love Letter -->
+  <div id="love-letter">
+    <h2>💌 A Special Letter for You 💌</h2>
+    <p>
+      Dear Bala,<br><br>
+      Every moment with you feels like magic. Your laughter is my favorite sound, and your happiness is my top priority. You make life beautiful just by being in it.<br><br>
+      On this special day, I want to remind you that you are deeply loved – by me, your Raja, forever and always 💖<br><br>
+      Happy Birthday once again, meri jaan.
+    </p>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // Show love letter when scrolled to bottom
+    window.onscroll = function() {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+        document.getElementById('love-letter').style.display = 'block';
+      }
+    };
+  </script>
+
+  <!-- Hearts Particle Background -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.18.3/tsparticles.min.js"></script>
+  <script>
+    tsParticles.load("heart-bg", {
+      particles: {
+        number: { value: 20 },
+        shape: {
+          type: "image",
+          image: { src: "https://img.icons8.com/emoji/48/000000/red-heart.png", width: 48, height: 48 }
+        },
+        size: { value: 20 },
+        move: { speed: 1, direction: "bottom" },
+        opacity: { value: 0.7 }
+      },
+      interactivity: { events: { onhover: { enable: false } } },
+      detectRetina: true
+    });
+  </script>
 </body>
 </html>
