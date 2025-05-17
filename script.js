@@ -19,7 +19,7 @@ setInterval(() => {
 }, 3000);
 
 // Countdown Timer (set your date below)
-const birthday = new Date("May 20, 2025 00:00:00").getTime();
+const birthday = new Date("May 18, 2025 00:00:00").getTime();
 
 const countdown = () => {
   const now = new Date().getTime();
